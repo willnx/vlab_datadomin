@@ -93,7 +93,7 @@ def create_datadomain(username, machine_name, image, network, logger):
                 raise ValueError('No such network named {}'.format(network))
             the_vm = virtual_machine.deploy_from_ova(vcenter=vcenter,
                                                      ova=ova,
-                                                     network_map=network_map,
+                                                     network_map=[network_map],
                                                      username=username,
                                                      machine_name=machine_name,
                                                      logger=logger,
