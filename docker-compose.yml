@@ -11,14 +11,14 @@ services:
       - INF_VCENTER_USER=Administrator@vsphere.local
       - INF_VCENTER_PASSWORD=1.Password
     volumes:
-      - ./vlab_datadomain_api:/usr/lib/python3.6/site-packages/vlab_datadomain_api
+      - ./vlab_datadomain_api:/usr/lib/python3.8/site-packages/vlab_datadomain_api
     command: ["python3", "app.py"]
 
   datadomain-worker:
     image:
       willnx/vlab-datadomain-worker
     volumes:
-      - ./vlab_datadomain_api:/usr/lib/python3.6/site-packages/vlab_datadomain_api
+      - ./vlab_datadomain_api:/usr/lib/python3.8/site-packages/vlab_datadomain_api
       - /mnt/raid/images/datadomain:/images:ro
     environment:
       - INF_VCENTER_SERVER=virtlab.igs.corp
